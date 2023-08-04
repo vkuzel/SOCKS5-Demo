@@ -16,7 +16,8 @@ curl --proxy socks5://localhost:5555 https://ifconfig.me/ip
 
 ## Examples
 
-1. [Setting the proxy globally](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) for all outgoing Socket connections.
+1. [Global setting](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) for all outgoing Socket connections.
     ```shell
     java -DsocksProxyHost=localhost -DsocksProxyPort=5555 MyApp
     ```
+2. [`java.net.HttpUrlConnection`](src/main/java/httpurlconnection)
