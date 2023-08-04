@@ -20,4 +20,4 @@ curl --proxy socks5://localhost:5555 https://ifconfig.me/ip
     ```shell
     java -DsocksProxyHost=localhost -DsocksProxyPort=5555 MyApp
     ```
-2. [`java.net.HttpUrlConnection`](src/main/java/httpurlconnection)
+2. [`java.net.HttpUrlConnection`](src/main/java/httpurlconnection/HttpUrlConnectionApp.java)
