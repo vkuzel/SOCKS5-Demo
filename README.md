@@ -1,6 +1,6 @@
 # SOCKS5 Proxy Demo
 
-Various ways of using SOCKS v5 proxy from Java.
+Examples of using SOCKS v5 proxy from Java.
 
 ## Setup
 
@@ -13,3 +13,10 @@ Test your proxy server with `curl`.
 ```shell
 curl --proxy socks5://localhost:5555 https://ifconfig.me/ip
 ```
+
+## Examples
+
+1. [Setting the proxy globally](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) for all outgoing Socket connections.
+    ```shell
+    java -DsocksProxyHost=localhost -DsocksProxyPort=5555 MyApp
+    ```
