@@ -4,7 +4,7 @@ Examples of using SOCKS v5 proxy from Java.
 
 ## Setup
 
-Use ssh to act as a SOCKS server by connecting to a machine with parameter `-D`.
+Use ssh with parameter `-D` to act as a SOCKS server.
 ```shell
 ssh -D 5555 100.100.100.100
 ```
