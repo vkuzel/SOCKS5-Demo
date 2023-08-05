@@ -20,7 +20,7 @@ public class HttpClientApp {
         var uri = new URI("https://ifconfig.me/ip");
         var proxyAddress = new InetSocketAddress("127.0.0.1", 5555);
 
-        var proxySelector = new SocksProxySelector(proxyAddress);
+        var proxySelector = createProxySelector(proxyAddress);
         var client = HttpClient.newBuilder().proxy(proxySelector).build();
 
         var request = HttpRequest.newBuilder(uri).build();
@@ -29,22 +29,18 @@ public class HttpClientApp {
         throw new RuntimeException("SOCKS proxy is not supported, the request was sent directly!");
     }
 
-    private static class SocksProxySelector extends ProxySelector {
+    private static ProxySelector createProxySelector(InetSocketAddress proxyAddress) {
+        return new ProxySelector() {
 
-        private final InetSocketAddress proxyAddress;
+            @Override
+            public List<Proxy> select(URI uri) {
+                return List.of(new Proxy(Proxy.Type.SOCKS, proxyAddress));
+            }
 
-        public SocksProxySelector(InetSocketAddress proxyAddress) {
-            this.proxyAddress = proxyAddress;
-        }
-
-        @Override
-        public List<Proxy> select(URI uri) {
-            return List.of(new Proxy(Proxy.Type.SOCKS, proxyAddress));
-        }
-
-        @Override
-        public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
-            throw new RuntimeException("Connect failed!");
-        }
+            @Override
+            public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
+                throw new RuntimeException("Connect failed!");
+            }
+        };
     }
 }
