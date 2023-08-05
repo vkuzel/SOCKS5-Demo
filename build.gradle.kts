@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
 	java
 }
@@ -16,5 +14,6 @@ repositories {
 }
 
 dependencies {
+	implementation("org.apache.httpcomponents.client5:httpclient5:5.2.1")
 	implementation("com.squareup.okhttp3:okhttp:4.11.0")
 }
