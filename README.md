@@ -27,3 +27,5 @@ curl --proxy socks5://localhost:5555 https://ifconfig.me/ip
    **The native Java 11 HttpClient cannot use SOCKS proxies at the moment!**
 
 4. [OkHttp 3](src/main/java/okhttp3/OkHttp3App.java)
+
+5. [Apache HttpClient 5](src/main/java/apachehttpclient5/ApacheHttpClient5App.java)
