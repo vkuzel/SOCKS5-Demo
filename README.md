@@ -16,10 +16,14 @@ curl --proxy socks5://localhost:5555 https://ifconfig.me/ip
 
 ## Examples
 
-1. [Global setting](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) for all outgoing Socket connections.
+1. [Global proxy setting](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) for all outgoing Socket connections.
     ```shell
     java -DsocksProxyHost=localhost -DsocksProxyPort=5555 MyApp
     ```
 2. [`java.net.HttpUrlConnection`](src/main/java/httpurlconnection/HttpUrlConnectionApp.java)
 
-3. [OkHttp 3](src/main/java/okhttp3/OkHttp3App.java)
+3. [`java.net.http.HttpClient`](src/main/java/httpclient/HttpClientApp.java)
+
+   **The native Java 11 HttpClient cannot use SOCKS proxies at the moment!**
+
+4. [OkHttp 3](src/main/java/okhttp3/OkHttp3App.java)
