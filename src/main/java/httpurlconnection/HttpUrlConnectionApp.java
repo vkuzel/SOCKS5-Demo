@@ -10,7 +10,7 @@ public class HttpUrlConnectionApp {
 
     public static void main(String[] args) throws IOException {
         var url = new URL("https://ifconfig.me/ip");
-        var proxyAddress = new InetSocketAddress("127.0.0.1", 5555);
+        var proxyAddress = new InetSocketAddress("127.0.0.1", 1080);
 
         var proxy = new Proxy(Proxy.Type.SOCKS, proxyAddress);
         var connection = (URLConnection) url.openConnection(proxy);

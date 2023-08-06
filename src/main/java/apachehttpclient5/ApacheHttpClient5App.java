@@ -18,7 +18,7 @@ public class ApacheHttpClient5App {
 
     public static void main(String[] args) throws IOException {
         var url = "https://ifconfig.me/ip";
-        var proxyAddress = new InetSocketAddress("127.0.0.1", 5555);
+        var proxyAddress = new InetSocketAddress("127.0.0.1", 1080);
 
         // The configuration channels ONLY HTTPS connections through the proxy.
         //

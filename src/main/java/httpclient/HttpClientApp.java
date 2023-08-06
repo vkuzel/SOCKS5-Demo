@@ -18,7 +18,7 @@ public class HttpClientApp {
         //
         // Reported bug: https://bugs.openjdk.org/browse/JDK-8214516
         var uri = new URI("https://ifconfig.me/ip");
-        var proxyAddress = new InetSocketAddress("127.0.0.1", 5555);
+        var proxyAddress = new InetSocketAddress("127.0.0.1", 1080);
 
         var proxySelector = createProxySelector(proxyAddress);
         var client = HttpClient.newBuilder().proxy(proxySelector).build();
